@@ -84,5 +84,9 @@ export const login = (req, res) => {
 
 
 export const logout = (req, res) => {
-    res.send("logout routes")
+    res.clearCookie("token")
+    res.status(200).json({
+        success: true,
+        message: "Logged out successfully"
+    })
 }
